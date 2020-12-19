@@ -1,0 +1,163 @@
+@width: 50vw;
+@height: 50vh;
+@titleHeight: 25px;
+
+@top: @height/2;
+@left: @width/2;
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.fadeIn(@time:1s) {
+  animation-name: fadeIn;
+  animation-duration: @time;
+}
+
+.windows {
+  position: absolute;
+  display: block;
+  width: @width;
+  height: @height;
+  top: @top;
+  left: @left;
+  border-radius: 10px;
+  box-shadow: 0 3px 6px -4px rgba(0, 0, 0, .1), 0 6px 6px 6px rgba(0, 0, 0, .1), 0 6px 6px 6px rgba(0, 0, 0, .1);
+  background-color: white;
+  opacity: 1;
+
+  .fadeIn(0.5s);
+
+  .topTitle {
+    @margin: 3px;
+    width: @width;
+    height: @titleHeight;
+    display: block;
+    background-color: #f7f7f7;
+    vertical-align: middle;
+    line-height: @titleHeight;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    div {
+      top: 0;
+      right: 0;
+      display: block;
+      float: right;
+    }
+
+    span {
+      top: 0;
+      display: block;
+      width: @titleHeight - 2*@margin;
+      height: @titleHeight - 2*@margin;
+      margin: @margin @margin 0 0;
+      float: left;
+      border-radius: 5px;
+      vertical-align: middle;
+      line-height: @titleHeight - 2*@margin;
+
+      svg {
+        display: block;
+      }
+
+    }
+
+    .c1 {
+      background: #81C2D0;
+    }
+
+    .c2 {
+      background: #659A65;
+    }
+
+    .c3 {
+      background: #D26262;
+    }
+  }
+
+  @reactionWidth: 4px;
+
+
+  .resize-handle-r {
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    width: @reactionWidth;
+    cursor: e-resize;
+    position: absolute;
+  }
+
+  .resize-handle-b {
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: @reactionWidth;
+    cursor: s-resize;
+    position: absolute;
+  }
+
+  .resize-handle-l {
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: @reactionWidth;
+    cursor: w-resize;
+    position: absolute;
+  }
+
+  .resize-handle-t {
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: @reactionWidth;
+    cursor: n-resize;
+    position: absolute;
+  }
+
+  .resize-handle-br {
+    right: 0;
+    bottom: 0;
+    width: @reactionWidth*2;
+    height: @reactionWidth*2;
+    cursor: se-resize;
+    position: absolute;
+  }
+
+  .resize-handle-bl {
+    left: 0;
+    bottom: 0;
+    width: @reactionWidth*2;
+    height: @reactionWidth*2;
+    cursor: sw-resize;
+    position: absolute;
+  }
+
+  .resize-handle-tr {
+    top: 0;
+    right: 0;
+    width: @reactionWidth*2;
+    height: @reactionWidth*2;
+    cursor: ne-resize;
+    position: absolute;
+  }
+
+  .resize-handle-tl {
+    top: 0;
+    left: 0;
+    width: @reactionWidth*2;
+    height: @reactionWidth*2;
+    cursor: nw-resize;
+    position: absolute;
+  }
+
+}
+
+
